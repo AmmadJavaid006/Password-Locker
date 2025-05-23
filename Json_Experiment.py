@@ -8,7 +8,8 @@ try:
             print(key.capitalize())
             print(f"Username : {value['username']}")
             print(f"Password : {value['password']}")
-except:
+
+except FileNotFoundError:
     
     data = {}
 
@@ -21,7 +22,7 @@ if action == "add":
 
     data[Svc] = {
 
-    "ssername" : Usn,
+    "username" : Usn,
     "password" : Pass
     }   
 
@@ -34,6 +35,14 @@ elif action == "change":
     uorp = input("Username or Password: ")
     if uorp == "Username":
             svc = input("OF WHICH SERVICE: ")
+            data[svc]["username"] = input("Enter New Username: ")
+    elif uorp == "Password":
+            svc = input("OF WHICH SERVICE: ")
+            data[svc]["password"] = input("Enter New Password: ")
+
+elif action == "delete":
+    svc = input("OF WHICH SVC: ")
+    del data[svc]
 
 
 else:

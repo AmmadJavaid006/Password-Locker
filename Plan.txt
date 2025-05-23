@@ -7,6 +7,7 @@ The locker uses JSON files to store the data, and can be extended to include enc
 
 2. Core Functionalities
 - Add new password entry for a service
+- Delete Existing entry
 - Update existing password entry
 - Search for a password entry
 - Store data in JSON file (vault.json)
